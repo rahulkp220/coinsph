@@ -20,8 +20,14 @@ CREATE TABLE payments (id VARCHAR(100) UNIQUE NOT NULL, sender VARCHAR(100) NOT 
 ```
 
 ##### Run server
-`go run main.go`
+`go run main.go` exposing the service locally on port `8080`
 
 
 ### Code Linting
 The linter used here is `golangci-lint` and to run it, simple go within the root of the repo and run `golangci-lint run`
+
+
+### Running the service using docker
+- `docker build -t coinsph-dev .`
+- `docker scan` for any vulnerabilities (optional)
+- `docker run -it -p 8080:8080 coinsph-dev`
