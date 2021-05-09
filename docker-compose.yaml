@@ -1,0 +1,30 @@
+version: '3'
+services:
+    database:
+        container_name: coinbase_db
+        image: "postgres:latest" # use latest official postgres version
+        restart: always
+        env_file:
+            - database.env # configure postgres
+        logging:
+          options:
+            max-size: 10m
+            max-file: "3"
+        ports: 
+            - "5433:5432"
+        volumes:
+            - ./postgres_data:/var/lib/postgresql/data/
+            - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    web:
+        container_name: coinbase_web
+        build: .
+        command: go run main.go
+        ports:
+            - "8080:8080"
+        depends_on:
+            - database
+        environment: 
+            DB_URL: postgresql://postgres:postgres@localhost:5432/coinsph?sslmode=disable
+
+volumes:
+  postgres_data:
