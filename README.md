@@ -28,6 +28,6 @@ The linter used here is `golangci-lint` and to run it, simple go within the root
 
 
 ### Running the service using docker
-- `docker build -t coinsph-dev .`
-- `docker scan` for any vulnerabilities (optional)
-- `docker run -it -p 8080:8080 coinsph-dev`
+- ~~`docker build -t coinsph-dev .`~~
+- ~~`docker scan` for any vulnerabilities (optional)~~
+- ~~`docker run -it -p 8080:8080 coinsph-dev`~~
