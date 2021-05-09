@@ -2,12 +2,12 @@
 This is a project that takes advantage of the `go-kit` framework and creates microservices.
 
 ### Installation
-#####Clone this repository in your `GOPATH` usually at 
+##### Clone this repository in your `GOPATH` usually at 
   - `/Users/<your-username>/go/src/` for `Mac`
   - `/home/<your-username>/go/src/` for `Linux`
 
 
-#####Setting up the database
+##### Setting up the database
 - Create database `coinsph` for the user `postgres`
 - Create a table `accounts`
 ```
@@ -19,7 +19,7 @@ CREATE TABLE accounts (Id VARCHAR (100) UNIQUE NOT NULL, username VARCHAR (50) U
 CREATE TABLE payments (id VARCHAR(100) UNIQUE NOT NULL, sender VARCHAR(100) NOT NULL, reciever VARCHAR(100) NOT NULL, amount NUMERIC NOT NULL, initiated TIME NOT NULL, completed TIME NOT NULL);
 ```
 
-#####Run server
+##### Run server
 `go run main.go`
 
 
